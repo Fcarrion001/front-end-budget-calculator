@@ -55,3 +55,11 @@ TIMETABLE
 --------
 -complete anything yet to be completed
 -make page look nice
+
+--------
+Update
+--------
+
+7-20-2017
+-curl has already been checked on back-end so continuing to curl here is
+ redundent.

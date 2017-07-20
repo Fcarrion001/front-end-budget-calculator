@@ -14,6 +14,38 @@
     <body class="container-fluid">
       <h1>Example</h1>
 
+      <form id="sign-up">
+    <fieldset>
+      <input type="submit" name="submit" value="Sign up!">
+      <input type="text" name=credentials[email] class="input" placeholder="email">
+      <input type="password" name='credentials[password]' class="input" placeholder="password">
+      <input type="password" name="credentials[password_confirmation]" class="input" placeholder="password confirmation">
+    </fieldset>
+  </form>
+
+  <form id="sign-in">
+    <fieldset>
+      <input type="submit" name="submit" value="Sign in!">
+      <input type="text" name=credentials[email] class="input" placeholder="email">
+      <input type="password" name='credentials[password]' class="input" placeholder="password">
+      <input type="password" name="credentials[password_confirmation]" class="input" placeholder="password confirmation">
+    </fieldset>
+  </form>
+
+  <form id="change-password">
+    <fieldset>
+      <input type="submit" name="submit" value="Change password!">
+      <input type="password" name='passwords[old]' class="input" placeholder="old password">
+      <input type="password" name='passwords[new]' class="input" placeholder="new password">
+    </fieldset>
+  </form>
+
+  <form id="sign-out">
+    <fieldset>
+      <input type="submit" name="submit" value="sign out">
+    </fieldset>
+  </form>
+
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
       eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
       minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
