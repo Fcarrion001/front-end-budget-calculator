@@ -22,11 +22,25 @@ const changePasswordSuccess = (data) => {
 const changePasswordFailure = (data) => {
   console.log('no go')
 }
+// ui for calc-events
+
+// post success and failure
+
+const addCashflowSuccess = (data) => {
+  console.log('addCashflow was successful ')
+  console.log(data)
+}
+
+const addCashflowFailure = (error) => {
+  console.log(error)
+}
 
 module.exports = {
   signUpSuccess,
   failure,
   signInSuccess,
   changePasswordSuccess,
-  changePasswordFailure
+  changePasswordFailure,
+  addCashflowSuccess,
+  addCashflowFailure
 }
