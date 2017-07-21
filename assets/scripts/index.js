@@ -11,7 +11,9 @@ $(() => {
 // const example = require('./example')
 
 const events = require('./events.js')
+const calcEvents = require('./calc-events.js')
 
 $(() => {
   events.addHandlers()
+  calcEvents.addHandlers()
 })

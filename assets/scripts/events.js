@@ -17,8 +17,8 @@ const onSignUp = function (event) {
   const data = getFormFields(this)
 
   api.signUp(data)
-    .then(ui.signInSuccess)
-    .catch(ui.signInSuccess)
+    .then(ui.signUpSuccess)
+    .catch(ui.failure)
 }
 
 // function for signing in
@@ -27,7 +27,7 @@ const onSignIn = function (event) {
   event.preventDefault()
   api.signIn(data)
     .then(ui.signInSuccess)
-    .catch(ui.signUpFailure)
+    .catch(ui.failure)
 }
 
 const onChangePassword = function (event) {

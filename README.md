@@ -57,9 +57,16 @@ TIMETABLE
 -make page look nice
 
 --------
-Update
+Updates
 --------
 
 7-20-2017
+--------
 -curl has already been checked on back-end so continuing to curl here is
  redundent.
+-when making a POST request on cashflows, error comes back '/cashflows not found'.
+ When manually going to localhost:port/cashflows message access denied comes up
+ because I have set the api up to not allow a get request of the entire
+ cashflows index. I should be able to post to cashflows when signed in though.
+ I believe the problem is with how I set my api up. I will go investigate the
+ problem. 

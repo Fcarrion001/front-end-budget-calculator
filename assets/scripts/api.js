@@ -42,9 +42,22 @@ const signOut = function (data) {
   })
 }
 
+const addCashflow = function (data) {
+  console.log('this is data ' + data)
+  return $.ajax({
+    url: config.apiOrigin + '/cashflows',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
   signIn,
   signUp,
   signOut,
-  changePassword
+  changePassword,
+  addCashflow
 }
