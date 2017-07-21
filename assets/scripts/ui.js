@@ -46,6 +46,20 @@ const deleteCashflowFailure = (error) => {
   console.log(error)
 }
 
+const indexCashflowSuccess = (data) => {
+  console.log('indexCashflow was successful ')
+  console.log(data)
+  // console.log all the keys and values within the index array
+  Object.keys(data.cashflows).forEach(function (key) {
+    console.log(key, data.cashflows[key])
+  })
+  store.cashflow = data.cashflow
+}
+
+const indexCashflowFailure = (error) => {
+  console.log(error)
+}
+
 module.exports = {
   signUpSuccess,
   failure,
@@ -55,5 +69,7 @@ module.exports = {
   addCashflowSuccess,
   addCashflowFailure,
   deleteCashflowSuccess,
-  deleteCashflowFailure
+  deleteCashflowFailure,
+  indexCashflowSuccess,
+  indexCashflowFailure
 }
