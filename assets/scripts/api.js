@@ -69,9 +69,7 @@ const deleteCashflow = function () {
 }
 
 // ajax request GET to cashflows
-const indexCashflow = function (data) {
-  console.log('this is data' + data)
-  console.log('this is this ' + this)
+const indexCashflow = function () {
   return $.ajax({
     url: config.apiOrigin + '/cashflows',
     method: 'GET',
@@ -82,6 +80,19 @@ const indexCashflow = function (data) {
   })
 }
 
+// ajax PATCH request ot cashflows
+const updateCashflow = function (data) {
+  console.log(data.cashflow)
+  return $.ajax({
+    url: config.apiOrigin + '/cashflows/' + data.cashflow.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
   signIn,
   signUp,
@@ -89,5 +100,6 @@ module.exports = {
   changePassword,
   addCashflow,
   deleteCashflow,
-  indexCashflow
+  indexCashflow,
+  updateCashflow
 }

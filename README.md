@@ -50,11 +50,24 @@ TIMETABLE
 -create handlebars logic
 -create calculation logic
 -implement all functionality
+  -handlebars must show name and value of cashflow
+  -successful post to cashflow must call index cashflow to show all cashflows
+   that the user created.
+  -index function must call handlebars to make rows appear on html
+  -value of cashflow must be in an input field that can be adjusted at will
+    -a button may be required to trigger the update, preferably not though
+  -delete button must be generated with each cashflow generated on the html
+   through handlebars
+  -this delete button will trigger the onDeleteCashflow function
+  -create logic to calculate the logic
+    -I will most likely put logic inside the indexCashflowSuccess function so
+     that I can target the array created and use .reduce to add them together
+     and return the result.
 --------
 7-22-2017--7-23-2017
 --------
 -complete anything yet to be completed
--make page look nice
+-make page look nice and make code neat and DRY.
 
 --------
 Updates

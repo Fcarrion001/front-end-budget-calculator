@@ -1,6 +1,7 @@
 'use strict'
 
 const store = require('./store')
+// const calcEvents = require('./calc-events.js')
 
 const signUpSuccess = (data) => {
   console.log('you signed up')
@@ -48,7 +49,6 @@ const deleteCashflowFailure = (error) => {
 
 const indexCashflowSuccess = (data) => {
   console.log('indexCashflow was successful ')
-  console.log(data)
   // console.log all the keys and values within the index array
   Object.keys(data.cashflows).forEach(function (key) {
     console.log(key, data.cashflows[key])
@@ -57,6 +57,17 @@ const indexCashflowSuccess = (data) => {
 }
 
 const indexCashflowFailure = (error) => {
+  console.log(error)
+  console.log('index didnt work')
+}
+
+const updateCashflowSuccess = (data) => {
+  console.log('updateCashflow was successful')
+
+  store.cashflow = data.cashflow
+}
+
+const updateCashflowFailure = (error) => {
   console.log(error)
 }
 
@@ -71,5 +82,7 @@ module.exports = {
   deleteCashflowSuccess,
   deleteCashflowFailure,
   indexCashflowSuccess,
-  indexCashflowFailure
+  indexCashflowFailure,
+  updateCashflowSuccess,
+  updateCashflowFailure
 }
