@@ -4,7 +4,8 @@ const api = require('./api')
 const ui = require('./ui')
 
 const addHandlers = () => {
-  $('#calculator').on('submit', onAddCashflow)
+  $('#add-cashflow').on('submit', onAddCashflow)
+  $('#delete-cashflow').on('submit', onDeleteCashflow)
 }
 
 // function to be run when a submission is made with id #calculator
@@ -18,6 +19,16 @@ const onAddCashflow = function (event) {
   .then(ui.addCashflowSuccess)
   // on failure
   .catch(ui.addCashflowFailure)
+}
+const onDeleteCashflow = function (event) {
+  event.preventDefault()
+  const data = getFormFields(this)
+  // ajax request
+  api.deleteCashflow(data)
+  // on success
+  .then(ui.deleteCashflowSuccess)
+  // on failure
+  .catch(ui.deleteCashflowFailure)
 }
 
 module.exports = {

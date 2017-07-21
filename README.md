@@ -2,7 +2,7 @@
 
 Version 1.0
 07-19-2017
-
+--------
 DESCRIPTION
 --------
   This application is for a budget calculator. With this, users will be able to
@@ -65,8 +65,13 @@ Updates
 -curl has already been checked on back-end so continuing to curl here is
  redundent.
 -when making a POST request on cashflows, error comes back '/cashflows not found'.
- When manually going to localhost:port/cashflows message access denied comes up
+-When manually going to localhost:port/cashflows message access denied comes up
  because I have set the api up to not allow a get request of the entire
  cashflows index. I should be able to post to cashflows when signed in though.
  I believe the problem is with how I set my api up. I will go investigate the
- problem. 
+ problem.
+-Found the bug in the API. I forgot to delete code that I was testing in the
+ routing file of the API and it was breaking the route. I also found
+ that I was innappropriatley using .find instead of .all
+ in the index method, in the CashflowsController class. Index requests should
+ now be possible.

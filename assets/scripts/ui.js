@@ -28,10 +28,21 @@ const changePasswordFailure = (data) => {
 
 const addCashflowSuccess = (data) => {
   console.log('addCashflow was successful ')
-  console.log(data)
+  console.log(data.cashflow.id)
+  // I will require handlebars here or within the index function that I will
+  // call here
+  store.cashflow = data.cashflow
 }
 
 const addCashflowFailure = (error) => {
+  console.log(error)
+}
+
+const deleteCashflowSuccess = () => {
+  console.log('deleteCashflow was successful ')
+}
+
+const deleteCashflowFailure = (error) => {
   console.log(error)
 }
 
@@ -42,5 +53,7 @@ module.exports = {
   changePasswordSuccess,
   changePasswordFailure,
   addCashflowSuccess,
-  addCashflowFailure
+  addCashflowFailure,
+  deleteCashflowSuccess,
+  deleteCashflowFailure
 }
