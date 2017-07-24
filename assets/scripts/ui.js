@@ -1,8 +1,7 @@
 'use strict'
-
+// require handlebars file
+const showCashflowsTemplate = require('./templates/cashflow-listing.hbs')
 const store = require('./store')
-// const calcEvents = require('./calc-events.js')
-
 const signUpSuccess = (data) => {
   console.log('you signed up')
 }
@@ -49,10 +48,14 @@ const deleteCashflowFailure = (error) => {
 
 const indexCashflowSuccess = (data) => {
   console.log('indexCashflow was successful ')
-  // console.log all the keys and values within the index array
-  Object.keys(data.cashflows).forEach(function (key) {
-    console.log(key, data.cashflows[key])
+  // delete everything in the div class content so that only one copy of the
+  // budget item list appears at any given time.
+  $.each($('.content'), function (index, element) {
+    $(element).text('')
   })
+  // This function appends data generated in handlebars into html
+  const showCahflowsHTML = showCashflowsTemplate({ cashflows: data.cashflows })
+  $('.content').append(showCahflowsHTML)
   store.cashflow = data.cashflow
 }
 
@@ -63,7 +66,6 @@ const indexCashflowFailure = (error) => {
 
 const updateCashflowSuccess = (data) => {
   console.log('updateCashflow was successful')
-
   store.cashflow = data.cashflow
 }
 

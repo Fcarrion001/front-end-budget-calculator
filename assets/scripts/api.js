@@ -1,7 +1,6 @@
 'use strict'
 
 const store = require('./store')
-
 const config = require('./config')
 
 const signUp = function (data) {
@@ -56,10 +55,10 @@ const addCashflow = function (data) {
 }
 
 // ajax request DELETE to cashflows
-const deleteCashflow = function () {
-  console.log('currently targeting ' + store.cashflow.id)
+const deleteCashflow = function (data) {
+  console.log('currently targeting ' + data.cashflow.id)
   return $.ajax({
-    url: config.apiOrigin + '/cashflows/' + store.cashflow.id,
+    url: config.apiOrigin + '/cashflows/' + data.cashflow.id,
     method: 'DELETE',
     // require user to be signed-in before creating new cashflow
     headers: {

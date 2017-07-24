@@ -2,10 +2,10 @@ const store = require('./store')
 const getFormFields = require('../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
-
 const addHandlers = () => {
   $('#add-cashflow').on('submit', onAddCashflow)
-  $('#delete-cashflow').on('submit', onDeleteCashflow)
+  // function now targets delete button generated through handlebars
+  $('.content').on('submit', 'form', onDeleteCashflow)
   $('#index-cashflow').on('submit', onIndexCashflow)
   $('#update-cashflow').on('submit', onUpdateCashflow)
 }
@@ -14,6 +14,7 @@ const addHandlers = () => {
 // This will attempt to post a new row to cashflows
 const onAddCashflow = function (event) {
   event.preventDefault()
+  console.log()
   const data = getFormFields(this)
   // ajax request
   api.addCashflow(data)
@@ -23,6 +24,9 @@ const onAddCashflow = function (event) {
   .catch(ui.addCashflowFailure)
 }
 const onDeleteCashflow = function (event) {
+  console.log('event ' + event)
+  console.log('data ' + data)
+  console.log('this ' + this)
   event.preventDefault()
   const data = getFormFields(this)
   // ajax request
