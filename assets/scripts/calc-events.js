@@ -6,8 +6,8 @@ const ui = require('./ui')
 // hide calculation section by default when the user has no cashflows
 // upon successful index request it will be shown
 $('.net-result').hide()
-$('#net-cahflow').hide()
-
+$('#net-cashflow').hide()
+$('.not-signed-in').hide()
 const addHandlers = () => {
   $('#add-cashflow').on('submit', onAddCashflow)
   // function now targets delete button generated through handlebars
@@ -30,6 +30,7 @@ const onAddCashflow = function (event) {
   // on failure
   .catch(ui.addCashflowFailure)
 }
+
 const onDeleteCashflow = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
@@ -52,9 +53,12 @@ const onUpdateCashflow = function (event) {
   api.updateCashflow(data)
   // on success
   .then(ui.updateCashflowSuccess)
+  .then(api.indexCashflow)
+  .then(ui.indexCashflowSuccess)
   // on failure
   .catch(ui.updateCashflowFailure)
 }
+
 module.exports = {
   addHandlers
 }

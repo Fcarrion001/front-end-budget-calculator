@@ -1,0 +1,43 @@
+$line-height: 1.6;
+$body-font-size: 18px;
+$verticle-margin: 5px;
+$body-width: 650px;
+$horizontal-padding: 10px;
+
+body {
+  line-height: $line-height;
+  font-size: $body-font-size;
+  padding: 15px $horizontal-padding;
+  max-width: $body-width;
+  margin: $verticle-margin auto;
+  display: inline;
+  text-align: center;
+
+};
+
+.hide-id {
+  visibility: hidden;
+  display: flow-root;
+};
+
+.delete-cashflow, .update-cashflow{
+  font-size: $body-font-size;
+  padding: 0 $horizontal-padding;
+  max-width: $body-width;
+  margin: $verticle-margin auto;
+
+  };
+
+#net-cashflow, .net-result {
+  font-size: $body-font-size * 2;
+  padding: 0 $horizontal-padding;
+  max-width: $body-width;
+  width: 800px;
+  margin: 0 auto;
+  display: inline;
+}
+
+  #page-wrap {
+       width: 800px;
+       margin: 0 auto;
+  }
