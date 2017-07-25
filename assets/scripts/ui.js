@@ -19,6 +19,7 @@ const signInSuccess = (data) => {
 
 const changePasswordSuccess = (data) => {
   console.log('password changed')
+  $('.ch-pw').val('')
 }
 
 const changePasswordFailure = (data) => {
@@ -50,13 +51,34 @@ const deleteCashflowFailure = (error) => {
 }
 
 const indexCashflowSuccess = (data) => {
-  console.log('indexCashflow was successful ')
   // delete everything in the div class content so that only one copy of the
   // budget item list appears at any given time.
-  $.each($('.content'), function (index, element) {
-    $(element).text('')
-  })
-  // This function appends data generated in handlebars into html
+  // make this DRY later turn it into a funtion with target as a parameter
+  $('.clear-input').val('')
+
+// logic for budget calculations to be called upon successful index request.
+// empty array to house values to be added together
+  const cashflowValueArray = []
+// function to target the needed values and push them to the empty array
+  const valuesToArray = function (object, array) {
+    for (let i = 0; i < object.length; i++) {
+      array.push(object[i].value)
+    }
+    console.log(array)
+  }
+  // invoke function to plug values into the array
+  valuesToArray(data.cashflows, cashflowValueArray)
+  console.log(cashflowValueArray)
+  // use reduce method to add all the values together and return the net sum.
+  const netCashflow = cashflowValueArray.reduce(function (sum, value) {
+    return sum + value
+  }, 0)
+  // show result to the user if there is atleast one cashflow.
+  if (cashflowValueArray.length > 0) {
+    $('.net-result').show(100)
+    $('#net-cashflow').text(netCashflow)
+  }
+  // This function appends data generated in handlebars into the html
   const showCahflowsHTML = showCashflowsTemplate({ cashflows: data.cashflows })
   $('.content').append(showCahflowsHTML)
   store.cashflow = data.cashflow

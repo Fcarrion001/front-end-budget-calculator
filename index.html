@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>NET CASHFLOW CALCULATOR</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags unless you know what you are doing -->
@@ -12,31 +12,31 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <h1>Example</h1>
+      <h1>NET CASHFLOW CALCULATOR</h1>
 
       <form id="sign-up">
     <fieldset>
       <input type="submit" name="submit" value="Sign up!">
-      <input type="text" name=credentials[email] class="input" placeholder="email">
-      <input type="password" name='credentials[password]' class="input" placeholder="password">
-      <input type="password" name="credentials[password_confirmation]" class="input" placeholder="password confirmation">
+      <input type="text" name=credentials[email] class="clear-input" placeholder="email">
+      <input type="password" name='credentials[password]' class="clear-input" placeholder="password">
+      <input type="password" name="credentials[password_confirmation]" class="clear-input" placeholder="password confirmation">
     </fieldset>
   </form>
 
   <form id="sign-in">
     <fieldset>
       <input type="submit" name="submit" value="Sign in!">
-      <input type="text" name=credentials[email] class="input" placeholder="email" value='fpc@fpc'>
-      <input type="password" name='credentials[password]' class="input" placeholder="password" value='1'>
-      <input type="password" name="credentials[password_confirmation]" class="input" placeholder="password confirmation" value='1'>
+      <input type="text" name=credentials[email] class="clear-input" placeholder="email" value='fpc@fpc'>
+      <input type="password" name='credentials[password]' class="clear-input" placeholder="password" value='1'>
+      <input type="password" name="credentials[password_confirmation]" class="clear-input" placeholder="password confirmation" value='1'>
     </fieldset>
   </form>
 
   <form id="change-password">
     <fieldset>
       <input type="submit" name="submit" value="Change password!">
-      <input type="password" name='passwords[old]' class="input" placeholder="old password">
-      <input type="password" name='passwords[new]' class="input" placeholder="new password">
+      <input type="password" name='passwords[old]' class="clear-input ch-pw" placeholder="old password">
+      <input type="password" name='passwords[new]' class="clear-input ch-pw" placeholder="new password">
     </fieldset>
   </form>
 
@@ -57,8 +57,8 @@
       <form id="add-cashflow">
         <fieldset>
           <input type="submit" name="submit" value="Add">
-          <input type="text" name='cashflow[name]' class="input" placeholder='name of cashflow item'>
-          <input type="number" name='cashflow[value]' class="input" placeholder="amount">
+          <input type="text" name='cashflow[name]' class="clear-input" placeholder='name of cashflow item'>
+          <input type="number" name='cashflow[value]' class="clear-input" placeholder="amount">
         </fieldset>
       </form>
 
@@ -83,7 +83,16 @@
           <input type="number" name='cashflow[value]' class="input" placeholder="amount">
         </fieldset>
       </form> -->
+
       <div id="content" class="content">
+          </div>
+<!-- div to house calculations -->
+          <h4 class="net-result">Net Result</h4>
+          <div id='net-cashflow' class='container'>
+            <div class="row">
+              <div class="col-xs-4 box">
+              </div>
+            </div>
           </div>
     </body>
 </html>
