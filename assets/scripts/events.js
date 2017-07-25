@@ -17,8 +17,13 @@ const onSignUp = function (event) {
   const data = getFormFields(this)
 
   api.signUp(data)
-    .then(ui.signUpSuccess)
-    .catch(ui.failure)
+    .done([ui.signUpSuccess,
+      function (response) {
+        api.signIn(data)
+          .done(ui.signInSuccess)
+          .catch(ui.failure)
+      }
+    ])
 }
 
 // function for signing in
@@ -27,6 +32,8 @@ const onSignIn = function (event) {
   event.preventDefault()
   api.signIn(data)
     .then(ui.signInSuccess)
+    .then(api.indexCashflow)
+    .then(ui.indexCashflowSuccess)
     .catch(ui.failure)
 }
 

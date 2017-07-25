@@ -5,47 +5,49 @@ const ui = require('./ui')
 const addHandlers = () => {
   $('#add-cashflow').on('submit', onAddCashflow)
   // function now targets delete button generated through handlebars
-  $('.content').on('submit', 'form', onDeleteCashflow)
-  $('#index-cashflow').on('submit', onIndexCashflow)
-  $('#update-cashflow').on('submit', onUpdateCashflow)
+  $('.content').on('submit', '.delete-cashflow', onDeleteCashflow)
+  // $('#index-cashflow').on('submit', onIndexCashflow)
+  $('.content').on('submit', '.update-cashflow', onUpdateCashflow)
 }
 
 // function to be run when a submission is made with id #calculator
 // This will attempt to post a new row to cashflows
 const onAddCashflow = function (event) {
   event.preventDefault()
-  console.log()
   const data = getFormFields(this)
   // ajax request
   api.addCashflow(data)
   // on success
   .then(ui.addCashflowSuccess)
+  .then(api.indexCashflow)
+  .then(ui.indexCashflowSuccess)
   // on failure
   .catch(ui.addCashflowFailure)
 }
 const onDeleteCashflow = function (event) {
-  console.log('event ' + event)
-  console.log('data ' + data)
-  console.log('this ' + this)
   event.preventDefault()
   const data = getFormFields(this)
   // ajax request
   api.deleteCashflow(data)
   // on success
   .then(ui.deleteCashflowSuccess)
+  // make ajax request GET request for users index
+  .then(api.indexCashflow)
+  // update html to reflect change to user automatically
+  .then(ui.indexCashflowSuccess)
   // on failure
   .catch(ui.deleteCashflowFailure)
 }
 
-const onIndexCashflow = function (event) {
-  event.preventDefault()
-  // ajax request
-  api.indexCashflow()
-  // on success
-  .then(ui.indexCashflowSuccess)
-  // on failure
-  .catch(ui.indexCashflowFailure)
-}
+// const onIndexCashflow = function (event) {
+//   event.preventDefault()
+//   // ajax request
+//   api.indexCashflow()
+//   // on success
+//   .then(ui.indexCashflowSuccess)
+//   // on failure
+//   .catch(ui.indexCashflowFailure)
+// }
 
 const onUpdateCashflow = function (event) {
   event.preventDefault()

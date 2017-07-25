@@ -2,16 +2,18 @@
 // require handlebars file
 const showCashflowsTemplate = require('./templates/cashflow-listing.hbs')
 const store = require('./store')
+
 const signUpSuccess = (data) => {
-  console.log('you signed up')
+  console.log(data.user)
+  store.user = data.user
 }
 
-const failure = (data) => {
-  console.log('no go')
+const failure = (error) => {
+  console.log(error)
 }
 
 const signInSuccess = (data) => {
-  console.log('you signed in')
+  console.log(data.user)
   store.user = data.user
 }
 
@@ -31,6 +33,7 @@ const addCashflowSuccess = (data) => {
   console.log(data.cashflow.id)
   // I will require handlebars here or within the index function that I will
   // call here
+  $('cashflow[name]').val('name of cashflow item')
   store.cashflow = data.cashflow
 }
 
@@ -38,7 +41,7 @@ const addCashflowFailure = (error) => {
   console.log(error)
 }
 
-const deleteCashflowSuccess = () => {
+const deleteCashflowSuccess = (data) => {
   console.log('deleteCashflow was successful ')
 }
 

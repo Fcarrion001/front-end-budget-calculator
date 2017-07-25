@@ -7,8 +7,16 @@
     NAME= {{cashflow.name}}
     VALUE= {{cashflow.value}}
   </li>
-  <form>
-    <fieldset class='delete-cashflow'>
+  <form class="update-cashflow">
+    <fieldset>
+      <input type="submit" name="submit" value="Update">
+      <input type="number" name='cashflow[id]' class="input" value={{cashflow.id}}>
+      <input type="text" name='cashflow[name]' class="input" value={{cashflow.name}}>
+      <input type="number" name='cashflow[value]' class="input" value={{cashflow.value}}>
+    </fieldset>
+  </form>
+  <form class='delete-cashflow'>
+    <fieldset>
       <input type="submit" name="submit" value="delete">
       <input type="number" name='cashflow[id]' class="input" value={{cashflow.id}}>
     </fieldset>
