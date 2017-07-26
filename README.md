@@ -2,7 +2,7 @@
 
 Version 1.0
 07-19-2017
-
+--------
 DESCRIPTION
 --------
   This application is for a budget calculator. With this, users will be able to
@@ -50,8 +50,41 @@ TIMETABLE
 -create handlebars logic
 -create calculation logic
 -implement all functionality
+  -handlebars must show name and value of cashflow
+  -successful post to cashflow must call index cashflow to show all cashflows
+   that the user created.
+  -index function must call handlebars to make rows appear on html
+  -value of cashflow must be in an input field that can be adjusted at will
+    -a button may be required to trigger the update, preferably not though
+  -delete button must be generated with each cashflow generated on the html
+   through handlebars
+  -this delete button will trigger the onDeleteCashflow function
+  -create logic to calculate the logic
+    -I will most likely put logic inside the indexCashflowSuccess function so
+     that I can target the array created and use .reduce to add them together
+     and return the result.
 --------
 7-22-2017--7-23-2017
 --------
 -complete anything yet to be completed
--make page look nice
+-make page look nice and make code neat and DRY.
+
+--------
+Updates
+--------
+
+7-20-2017
+--------
+-curl has already been checked on back-end so continuing to curl here is
+ redundent.
+-when making a POST request on cashflows, error comes back '/cashflows not found'.
+-When manually going to localhost:port/cashflows message access denied comes up
+ because I have set the api up to not allow a get request of the entire
+ cashflows index. I should be able to post to cashflows when signed in though.
+ I believe the problem is with how I set my api up. I will go investigate the
+ problem.
+-Found the bug in the API. I forgot to delete code that I was testing in the
+ routing file of the API and it was breaking the route. I also found
+ that I was innappropriatley using .find instead of .all
+ in the index method, in the CashflowsController class. Index requests should
+ now be possible.
