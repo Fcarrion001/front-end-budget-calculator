@@ -37,6 +37,7 @@ const changePasswordFailure = (data) => {
 const signOutSuccess = () => {
   $('#net-cashflow').text('')
   $('#net-cashflow').hide('')
+  $('.content').text('')
   $('.net-result').hide('')
   $('.not-signed-in').hide()
   $('#sign-up').show()
