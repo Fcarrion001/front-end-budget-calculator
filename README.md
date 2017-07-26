@@ -1,4 +1,4 @@
--Front-end for budget calculator-
+-FRONT-END FOR BUDGET CALCULATOR-
 
 Version 1.0
 07-19-2017
@@ -88,3 +88,11 @@ Updates
  that I was innappropriatley using .find instead of .all
  in the index method, in the CashflowsController class. Index requests should
  now be possible.
+------
+
+LINKS
+
+WEBSITE
+https://fcarrion001.github.io/front-end-budget-calculator/
+BACK-END REPO
+https://github.com/Fcarrion001/fullstack-budget-calculator
