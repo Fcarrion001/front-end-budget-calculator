@@ -17,15 +17,17 @@
   <div id='page-wrap'>
     <form id="sign-up">
       <fieldset>
+        <h3 class="message signUp-error"></h3>
         <input type="submit" name="submit" value="Sign up!">
-        <input type="text" name=credentials[email] class="clear-input" placeholder="email">
-        <input type="password" name='credentials[password]' class="clear-input" placeholder="password">
-        <input type="password" name="credentials[password_confirmation]" class="clear-input" placeholder="password confirmation">
+        <input type="text" name=credentials[email] class="clear-input signUp-email" placeholder="email">
+        <input type="password" name='credentials[password]' class="clear-input signUp-pw" placeholder="password">
+        <input type="password" name="credentials[password_confirmation]" class="clear-input signUp-pw-conf" placeholder="password confirmation">
       </fieldset>
     </form>
 
     <form id="sign-in">
       <fieldset>
+        <h3 class="message signIn-error"></h3>
         <input type="submit" name="submit" value="Sign in!">
         <input type="text" name=credentials[email] class="clear-input" placeholder="email">
         <input type="password" name='credentials[password]' class="clear-input" placeholder="password">
@@ -35,6 +37,7 @@
 
     <form id="change-password" class="not-signed-in">
       <fieldset>
+        <h3 class="message ch-pw-error"></h3>
         <input type="submit" name="submit" value="Change password!">
         <input type="password" name='passwords[old]' class="clear-input ch-pw" placeholder="old password">
         <input type="password" name='passwords[new]' class="clear-input ch-pw" placeholder="new password">

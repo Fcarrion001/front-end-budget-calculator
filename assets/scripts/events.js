@@ -1,6 +1,5 @@
 'use strict'
 
-const store = require('./store')
 const getFormFields = require('../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
@@ -21,9 +20,9 @@ const onSignUp = function (event) {
       function (response) {
         api.signIn(data)
           .done(ui.signInSuccess)
-          .catch(ui.failure)
       }
     ])
+    .catch(ui.signUpFailure)
 }
 
 // function for signing in
@@ -34,7 +33,7 @@ const onSignIn = function (event) {
     .then(ui.signInSuccess)
     .then(api.indexCashflow)
     .then(ui.indexCashflowSuccess)
-    .catch(ui.failure)
+    .catch(ui.signInFailure)
 }
 
 const onChangePassword = function (event) {
