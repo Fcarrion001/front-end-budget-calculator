@@ -68,6 +68,7 @@ const signOutSuccess = () => {
   $('#sign-in').show()
   $('.signUp-error').text('')
   $('.signIn-error').text('')
+  $('.clear-input').val('')
 }
 // ui for calc-events
 
