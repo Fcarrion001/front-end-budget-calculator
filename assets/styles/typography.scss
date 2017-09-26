@@ -15,16 +15,17 @@ body {
 
 };
 
-.hide-id {
-  visibility: hidden;
-  display: flow-root;
-};
+// .hide-id {
+//   visibility: hidden;
+//   display: flow-root;
+// };
 
 .delete-cashflow, .update-cashflow{
   font-size: $body-font-size;
   padding: 0 $horizontal-padding;
   max-width: $body-width;
   margin: $verticle-margin auto;
+  float: left;
 
   };
 
@@ -35,6 +36,7 @@ body {
   width: 800px;
   margin: 0 auto;
   display: inline;
+  clear: right;
 }
 
   #page-wrap {

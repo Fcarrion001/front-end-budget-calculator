@@ -1,19 +1,31 @@
 <h1>CASHFLOW LIST</h1>
-{{#each cashflows as |cashflow|}}
+<table class="table table-hover table-striped table-bordered" data-id= {{cashflow.id}}>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Amount</th>
+      <th>Update</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+  {{#each cashflows as |cashflow|}}
 
-  <ul data-id={{cashflow.id}}></ul>
-  <form class="update-cashflow">
-    <fieldset>
-      <input type="number" name='cashflow[id]' class="hide-id" value={{cashflow.id}}>
-      <input type="text" name='cashflow[name]' class="input" value="{{cashflow.name}}">
-      <input type="number" step="0.01" name='cashflow[value]' class="input" value={{cashflow.value}}>
-      <input type="submit" name="submit" class="update-button" value="Update">
-    </fieldset>
-  </form>
-  <form class='delete-cashflow'>
-    <fieldset>
-      <input type="number" name='cashflow[id]' class="hide-id" value={{cashflow.id}}>
-      <input type="submit" name="submit" class="delete-button" value="delete">
-    </fieldset>
-  </form>
-{{/each}}
+      <tr>
+        <form class="update-cashflow">
+          <fieldset>
+            <input type="hidden" name='cashflow[id]' class="hide-id" value= {{cashflow.id}}>
+            <td><input type="text" name='cashflow[name]' class="input" value="{{cashflow.name}}"></td>
+            <td><input type="number" step="0.01" name='cashflow[value]' class="input" value= {{cashflow.value}}></td>
+            <td><input type="submit" name="submit" class="update-button" value="Update"></td>
+          </fieldset>
+        </form>
+        <form class='delete-cashflow'>
+          <fieldset>
+            <input type="hidden" name='cashflow[id]' value= {{cashflow.id}}>
+            <td><input type="submit" name="submit" class="delete-button" value="delete"></td>
+          </fieldset>
+        </form>
+      </tr>
+  {{/each}}
+</tbody>

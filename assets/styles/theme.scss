@@ -2,11 +2,11 @@
 @import 'typography';
 
 body {
-  background-image: url(https://image.shutterstock.com/z/stock-vector-physics-electronic-engineering-mathematics-equation-and-calculations-endless-hand-writing-530231695.jpg);
+  background-color: darken(green, 10);
 };
 
 p {
-  color: mix(black, $paper-white, 80);
+  color: black;
   font-weight: 600;
 };
 
