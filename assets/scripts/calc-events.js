@@ -14,6 +14,16 @@ const addHandlers = () => {
   $('.content').on('submit', '.delete-cashflow', onDeleteCashflow)
   // $('#index-cashflow').on('submit', onIndexCashflow)
   $('.content').on('submit', '.update-cashflow', onUpdateCashflow)
+  $('.content').on('click', 'tbody tr', rowSelector)
+}
+// function to add and remove class .selected from rows clicked on
+const rowSelector = function () {
+  if ($(this).hasClass('selected')) {
+    $(this).removeClass('selected')
+  } else {
+    $('tr.selected').removeClass('selected')
+    $(this).addClass('selected')
+  }
 }
 
 // function to be run when a submission is made with id #calculator
@@ -33,7 +43,8 @@ const onAddCashflow = function (event) {
 
 const onDeleteCashflow = function (event) {
   event.preventDefault()
-  const data = getFormFields(this)
+  // get the data-id of the selected row for deletion
+  const data = $('.selected').attr('data-id')
   // ajax request
   api.deleteCashflow(data)
   // on success

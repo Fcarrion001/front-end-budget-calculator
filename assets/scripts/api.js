@@ -56,9 +56,9 @@ const addCashflow = function (data) {
 
 // ajax request DELETE to cashflows
 const deleteCashflow = function (data) {
-  console.log('currently targeting ' + data.cashflow.id)
+  console.log('currently targeting ' + data)
   return $.ajax({
-    url: config.apiOrigin + '/cashflows/' + data.cashflow.id,
+    url: config.apiOrigin + '/cashflows/' + data,
     method: 'DELETE',
     // require user to be signed-in before creating new cashflow
     headers: {
