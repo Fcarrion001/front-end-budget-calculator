@@ -2,12 +2,14 @@
 @import 'typography';
 
 body {
-  background-color: darken(green, 10);
+  // background-color: darken(green, 10);
+  background-image: url(images/falling-money.jpg);
 };
 
 p {
-  color: black;
+  color: $pure-black;
   font-weight: 600;
+  background-color: white;
 };
 
 #net-cashflow {
@@ -20,5 +22,19 @@ p {
 }
 
 .selected {
-  background-color: yellow;
+  color: red;
+}
+
+th {
+  text-align: center;
+}
+
+h1, h4 {
+  color: white;
+  background-color: black;
+}
+
+.message {
+  color: red;
+  background-color: black;
 }
