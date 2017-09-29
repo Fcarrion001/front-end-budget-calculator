@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>BUDGET CALCULATOR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags unless you know what you are doing -->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags unless you know what you are doing -->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body class="container-fluid">
+  <div id='page-wrap'>
+    <form id="sign-up">
+      <fieldset>
+        <h3 class="message signUp-error"></h3>
+        <input type="submit" name="submit" value="Sign up!">
+        <input type="text" name=credentials[email] class="clear-input signUp-email" placeholder="email">
+        <input type="password" name='credentials[password]' class="clear-input signUp-pw" placeholder="password">
+        <input type="password" name="credentials[password_confirmation]" class="clear-input signUp-pw-conf" placeholder="password confirmation">
+      </fieldset>
+    </form>
+
+    <form id="sign-in">
+      <fieldset>
+        <h3 class="message signIn-error"></h3>
+        <input type="submit" name="submit" value="Sign in!">
+        <input type="text" name=credentials[email] class="clear-input" placeholder="email">
+        <input type="password" name='credentials[password]' class="clear-input" placeholder="password">
+      </fieldset>
+    </form>
+
+
+    <form id="change-password" class="not-signed-in">
+      <fieldset>
+        <h3 class="message ch-pw-error"></h3>
+        <input type="submit" name="submit" value="Change password!">
+        <input type="password" name='passwords[old]' class="clear-input ch-pw" placeholder="old password">
+        <input type="password" name='passwords[new]' class="clear-input ch-pw" placeholder="new password">
+      </fieldset>
+    </form>
+
+    <form id="sign-out" class="not-signed-in">
+      <fieldset>
+        <input type="submit" name="submit" value="sign out">
+      </fieldset>
+    </form>
+    <h1>BUDGET CALCULATOR</h1>
+    <p>This is a budget calculator that can be used add up money coming in and out. You can use it to see where your money is going or to plan your budget. To use it, simply enter the name of the cashflow item and its value in the designated field, then
+      click add. Expenses require a (-) before the amount. You can update or delete a cashflow item at any time. You must be signed-in to use the calculator and only you can see your cashflow list. Your work will also be saved for you automatically.</p>
+
+    <form id="add-cashflow" class="not-signed-in">
+      <fieldset>
+        <input type="submit" name="submit" value="Add">
+        <input type="text" name='cashflow[name]' class="clear-input" placeholder='name of cashflow item'>
+        <input type="number" name='cashflow[value]' class="clear-input" placeholder="amount">
+      </fieldset>
+    </form>
+
+    <div id="content" class="content not-signed-in">
+      <div class="container">
+    </div>
+
+    <!-- div to house calculations -->
+  </div>
+  <h4 class="net-result">Net Result</h4>
+  <div id='net-cashflow' class='container-table'>
+    <div class="vertical-center-row">
+      <div class="col-xs-12 box">
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+
+</html>
