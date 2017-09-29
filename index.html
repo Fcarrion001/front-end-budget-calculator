@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>NET CASHFLOW CALCULATOR</title>
+  <title>BUDGET CALCULATOR</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Do not add `link` tags unless you know what you are doing -->
@@ -51,8 +51,7 @@
     </form>
     <h1>BUDGET CALCULATOR</h1>
     <p>This is a budget calculator that can be used add up money coming in and out. You can use it to see where your money is going or to plan your budget. To use it, simply enter the name of the cashflow item and its value in the designated field, then
-      click add. If the item is money that is an expense, you need to input it as a negative number. Cashflows without a name or value will not be permitted. You can update or delete a cashflow item at anytime by changing what you want and clicking the
-      respective buttons. You must be signed-in to use the calculator and only you can see your cashflow list. Your list will also automatically be saved for you so you can come back to it at anytime</p>
+      click add. Expenses require a (-) before the amount. You can update or delete a cashflow item at any time. You must be signed-in to use the calculator and only you can see your cashflow list. Your work will also be saved for you automatically.</p>
 
     <form id="add-cashflow" class="not-signed-in">
       <fieldset>
@@ -63,13 +62,15 @@
     </form>
 
     <div id="content" class="content not-signed-in">
+      <div class="container">
     </div>
+
     <!-- div to house calculations -->
-    <h4 class="net-result">Net Result</h4>
-    <div id='net-cashflow' class='container-table'>
-      <div class="vertical-center-row">
-        <div class="col-xs-12 box">
-        </div>
+  </div>
+  <h4 class="net-result">Net Result</h4>
+  <div id='net-cashflow' class='container-table'>
+    <div class="vertical-center-row">
+      <div class="col-xs-12 box">
       </div>
     </div>
   </div>

@@ -42,7 +42,6 @@ const signOut = function (data) {
 }
 // ajax request POST to cashflows
 const addCashflow = function (data) {
-  console.log('this is data ' + data)
   return $.ajax({
     url: config.apiOrigin + '/cashflows',
     method: 'POST',
@@ -55,10 +54,9 @@ const addCashflow = function (data) {
 }
 
 // ajax request DELETE to cashflows
-const deleteCashflow = function (data) {
-  console.log('currently targeting ' + data.cashflow.id)
+const deleteCashflow = function (id) {
   return $.ajax({
-    url: config.apiOrigin + '/cashflows/' + data.cashflow.id,
+    url: config.apiOrigin + '/cashflows/' + id,
     method: 'DELETE',
     // require user to be signed-in before creating new cashflow
     headers: {
@@ -80,10 +78,9 @@ const indexCashflow = function () {
 }
 
 // ajax PATCH request ot cashflows
-const updateCashflow = function (data) {
-  console.log(data.cashflow)
+const updateCashflow = function (id, data) {
   return $.ajax({
-    url: config.apiOrigin + '/cashflows/' + data.cashflow.id,
+    url: config.apiOrigin + '/cashflows/' + id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token

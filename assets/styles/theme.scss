@@ -2,12 +2,14 @@
 @import 'typography';
 
 body {
-  background-image: url(https://image.shutterstock.com/z/stock-vector-physics-electronic-engineering-mathematics-equation-and-calculations-endless-hand-writing-530231695.jpg);
+  // background-color: darken(green, 10);
+  background-image: url(images/falling-money.jpg);
 };
 
 p {
-  color: mix(black, $paper-white, 80);
+  color: $pure-black;
   font-weight: 600;
+  background-color: white;
 };
 
 #net-cashflow {
@@ -17,4 +19,22 @@ p {
 
 .content {
   background-color: $gray;
+}
+
+.selected {
+  color: red;
+}
+
+th {
+  text-align: center;
+}
+
+h1, h4 {
+  color: white;
+  background-color: black;
+}
+
+.message {
+  color: red;
+  background-color: black;
 }
